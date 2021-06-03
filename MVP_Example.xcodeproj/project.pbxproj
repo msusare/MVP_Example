@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		F47F5611264813E600F8520A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F5610264813E600F8520A /* AppDelegate.swift */; };
 		F47F5613264813E600F8520A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F5612264813E600F8520A /* SceneDelegate.swift */; };
-		F47F5615264813E600F8520A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F5614264813E600F8520A /* ViewController.swift */; };
+		F47F5615264813E600F8520A /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F5614264813E600F8520A /* UsersViewController.swift */; };
 		F47F5618264813E600F8520A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47F5616264813E600F8520A /* Main.storyboard */; };
 		F47F561A264813E900F8520A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47F5619264813E900F8520A /* Assets.xcassets */; };
 		F47F561D264813E900F8520A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47F561B264813E900F8520A /* LaunchScreen.storyboard */; };
 		F47F5628264813EA00F8520A /* MVP_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F5627264813EA00F8520A /* MVP_ExampleTests.swift */; };
 		F47F5633264813EA00F8520A /* MVP_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F5632264813EA00F8520A /* MVP_ExampleUITests.swift */; };
+		F47F56482648145900F8520A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F56472648145900F8520A /* Presenter.swift */; };
+		F47F564D264814CD00F8520A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F564C264814CD00F8520A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		F47F560D264813E600F8520A /* MVP_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47F5610264813E600F8520A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47F5612264813E600F8520A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F47F5614264813E600F8520A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F47F5614264813E600F8520A /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		F47F5617264813E600F8520A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F47F5619264813E900F8520A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47F561C264813E900F8520A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		F47F562E264813EA00F8520A /* MVP_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVP_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47F5632264813EA00F8520A /* MVP_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_ExampleUITests.swift; sourceTree = "<group>"; };
 		F47F5634264813EA00F8520A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47F56472648145900F8520A /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		F47F564C264814CD00F8520A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,9 @@
 		F47F560F264813E600F8520A /* MVP_Example */ = {
 			isa = PBXGroup;
 			children = (
+				F47F56432648142000F8520A /* MVP */,
 				F47F5610264813E600F8520A /* AppDelegate.swift */,
 				F47F5612264813E600F8520A /* SceneDelegate.swift */,
-				F47F5614264813E600F8520A /* ViewController.swift */,
 				F47F5616264813E600F8520A /* Main.storyboard */,
 				F47F5619264813E900F8520A /* Assets.xcassets */,
 				F47F561B264813E900F8520A /* LaunchScreen.storyboard */,
@@ -126,6 +130,40 @@
 				F47F5634264813EA00F8520A /* Info.plist */,
 			);
 			path = MVP_ExampleUITests;
+			sourceTree = "<group>";
+		};
+		F47F56432648142000F8520A /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				F47F56462648143D00F8520A /* Presenter */,
+				F47F56452648143800F8520A /* View */,
+				F47F56442648143300F8520A /* Model */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		F47F56442648143300F8520A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F47F564C264814CD00F8520A /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F47F56452648143800F8520A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F47F5614264813E600F8520A /* UsersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F47F56462648143D00F8520A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F47F56472648145900F8520A /* Presenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F47F5615264813E600F8520A /* ViewController.swift in Sources */,
+				F47F5615264813E600F8520A /* UsersViewController.swift in Sources */,
 				F47F5611264813E600F8520A /* AppDelegate.swift in Sources */,
+				F47F56482648145900F8520A /* Presenter.swift in Sources */,
+				F47F564D264814CD00F8520A /* User.swift in Sources */,
 				F47F5613264813E600F8520A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
